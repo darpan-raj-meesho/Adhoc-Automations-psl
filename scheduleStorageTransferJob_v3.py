@@ -107,12 +107,12 @@ if __name__== '__main__':
         future_timestamp_pb.FromDatetime(future_time)
 
         start_seconds = timestamp_pb.seconds % 60
-        end_seconds = future_timestamp_pb.seconds % 60
+        # end_seconds = future_timestamp_pb.seconds % 60
 
         schedule_dict = {
             "schedule_start_date": {"year": current_time.year, "month": current_time.month, "day": current_time.day},
             "start_time_of_day": {"hours": current_time.hour, "minutes": current_time.minute, "seconds": start_seconds},
-            "end_time_of_day": {"hours": future_time.hour, "minutes": future_time.minute, "seconds": end_seconds},
+            # "end_time_of_day": {"hours": future_time.hour, "minutes": future_time.minute, "seconds": end_seconds},
             "schedule_end_date": {"year": future_time.year, "month": future_time.month, "day": future_time.day},
         }
 
@@ -166,6 +166,6 @@ if __name__== '__main__':
         except Exception as e:
             logging.error(f"An unexpected error occurred: {e}")
             logging.error(traceback.format_exc())
-        exit(0)
+        # exit(0)
 
     logging.info('Script completed.')
