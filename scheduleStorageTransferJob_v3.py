@@ -154,17 +154,18 @@ if __name__== '__main__':
         switchEndpoint = not switchEndpoint
         new_transfer_job.transfer_spec = transfer_spec
 
-        try:
-            # print(new_transfer_job)
-            response = transfer_client.create_transfer_job(
-                request=storage_transfer_v1.CreateTransferJobRequest(transfer_job=new_transfer_job)
-            )
-            logging.info(f'Transfer job created: {response.name}')
-        except AlreadyExists as e:
-            logging.error(f"Resource already exists: {e}")
-        except Exception as e:
-            logging.error(f"An unexpected error occurred: {e}")
-            logging.error(traceback.format_exc())
+        print(new_transfer_job)
+        # try:
+        #     # print(new_transfer_job)
+        #     response = transfer_client.create_transfer_job(
+        #         request=storage_transfer_v1.CreateTransferJobRequest(transfer_job=new_transfer_job)
+        #     )
+        #     logging.info(f'Transfer job created: {response.name}')
+        # except AlreadyExists as e:
+        #     logging.error(f"Resource already exists: {e}")
+        # except Exception as e:
+        #     logging.error(f"An unexpected error occurred: {e}")
+        #     logging.error(traceback.format_exc())
         # exit(0)
 
-    logging.info('Script completed.')
+    # logging.info('Script completed.')
