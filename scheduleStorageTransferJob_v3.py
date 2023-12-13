@@ -102,7 +102,7 @@ if __name__== '__main__':
         timestamp_pb = Timestamp()
         timestamp_pb.FromDatetime(current_time)
 
-        future_time = current_time + timedelta(days=5,hours=3)
+        future_time = current_time + timedelta(hours=3)
         future_timestamp_pb = Timestamp()
         future_timestamp_pb.FromDatetime(future_time)
 
