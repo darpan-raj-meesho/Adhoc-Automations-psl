@@ -74,7 +74,7 @@ if __name__== '__main__':
     jobs_df = pd.read_excel(excel_file_path, sheet_name='Sheet1', engine='openpyxl')
     enableLogging()
     switchEndpoint=True
-    switchPool = True
+    switchPool = False
     transfer_client = storage_transfer_v1.StorageTransferServiceClient()
     cnt=0
     for index, row in jobs_df.iterrows():
