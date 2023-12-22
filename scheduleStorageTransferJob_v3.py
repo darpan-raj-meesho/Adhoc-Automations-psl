@@ -143,8 +143,8 @@ if __name__== '__main__':
                     time_created=storage_transfer_v1.MetadataOptions.TimeCreated.TIME_CREATED_PRESERVE_AS_CUSTOM_TIME
                 )
             ),
-            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
-            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
+            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
+            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
             
         )
 
