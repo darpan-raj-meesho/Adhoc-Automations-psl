@@ -74,7 +74,7 @@ if __name__== '__main__':
     jobs_df = pd.read_excel(excel_file_path, sheet_name='Sheet1', engine='openpyxl')
     enableLogging()
     switchEndpoint=True
-    switchPool = False
+    switchPool = True
     transfer_client = storage_transfer_v1.StorageTransferServiceClient()
     cnt=0
     for index, row in jobs_df.iterrows():
@@ -143,8 +143,8 @@ if __name__== '__main__':
                     time_created=storage_transfer_v1.MetadataOptions.TimeCreated.TIME_CREATED_PRESERVE_AS_CUSTOM_TIME
                 )
             ),
-            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
-            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
+            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
+            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
             
         )
 
