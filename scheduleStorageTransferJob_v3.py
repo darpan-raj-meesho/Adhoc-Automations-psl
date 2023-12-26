@@ -105,7 +105,7 @@ if __name__== '__main__':
         future_time = current_time + timedelta(minutes=30)
         future_timestamp_pb = Timestamp()
         future_timestamp_pb.FromDatetime(future_time)
-
+# 10AM everyday 
         start_seconds = timestamp_pb.seconds % 60
         # end_seconds = future_timestamp_pb.seconds % 60
 
@@ -126,7 +126,8 @@ if __name__== '__main__':
             aws_s3_compatible_data_source=storage_transfer_v1.AwsS3CompatibleData(
                 bucket_name=source_bucket_name,
                 path=f'{location}/',
-                endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
+                # endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
+                endpoint=f"{endpoint1}",
                 region='ap-southeast-1',
                 s3_metadata=storage_transfer_v1.S3CompatibleMetadata(
                     auth_method=storage_transfer_v1.S3CompatibleMetadata.AuthMethod.AUTH_METHOD_AWS_SIGNATURE_V4,
