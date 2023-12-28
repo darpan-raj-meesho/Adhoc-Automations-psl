@@ -121,12 +121,12 @@ if __name__== '__main__':
         transfer_spec = storage_transfer_v1.TransferSpec(
             gcs_data_sink=storage_transfer_v1.GcsData(
                 bucket_name=dest_bucket_name,
-                path=f'{location}/'
+                # path=f'{location}/'
                 # path = 'databricks-2516183257845181/2516183257845181'
             ),
             aws_s3_compatible_data_source=storage_transfer_v1.AwsS3CompatibleData(
                 bucket_name=source_bucket_name,
-                path=f'{location}/',
+                # path=f'{location}/',
                 # path = 'singapore-prod/3660535150785951/',
                 # endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
                 endpoint=f"{endpoint1}",
