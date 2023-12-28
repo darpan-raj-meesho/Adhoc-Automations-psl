@@ -121,11 +121,11 @@ if __name__== '__main__':
         transfer_spec = storage_transfer_v1.TransferSpec(
             gcs_data_sink=storage_transfer_v1.GcsData(
                 bucket_name=dest_bucket_name,
-                path=f'{location}/' if location is not None else ""
+                # path=f'{location}/'
             ),
             aws_s3_compatible_data_source=storage_transfer_v1.AwsS3CompatibleData(
                 bucket_name=source_bucket_name,
-                path=f'{location}/' if location is not None else "",
+                # path=f'{location}/',
                 # endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
                 endpoint=f"{endpoint1}",
                 region='ap-southeast-1',
