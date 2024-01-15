@@ -102,7 +102,7 @@ if __name__== '__main__':
         timestamp_pb = Timestamp()
         timestamp_pb.FromDatetime(current_time)
 
-        future_time = current_time + timedelta(days=14)
+        future_time = current_time + timedelta(hours=1)
         future_timestamp_pb = Timestamp()
         future_timestamp_pb.FromDatetime(future_time)
 # 10AM everyday 
@@ -121,16 +121,16 @@ if __name__== '__main__':
         transfer_spec = storage_transfer_v1.TransferSpec(
             gcs_data_sink=storage_transfer_v1.GcsData(
                 bucket_name=dest_bucket_name,
-                # path=f'{location}/'
+                path=f'{location}/'
                 # path = 'databricks-2516183257845181/2516183257845181'
             ),
             aws_s3_compatible_data_source=storage_transfer_v1.AwsS3CompatibleData(
                 bucket_name=source_bucket_name,
-                # path=f'{location}/',
+                path=f'{location}/',
                 # path = 'singapore-prod/3660535150785951/',
-                # endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
-                endpoint=f"{endpoint1}",
-                region='us-west-2',
+                endpoint=f"{endpoint1 if switchEndpoint else endpoint2 }",
+                # endpoint=f"{endpoint1}",
+                region='ap-southeast-1',
                 s3_metadata=storage_transfer_v1.S3CompatibleMetadata(
                     auth_method=storage_transfer_v1.S3CompatibleMetadata.AuthMethod.AUTH_METHOD_AWS_SIGNATURE_V4,
                     request_model=storage_transfer_v1.S3CompatibleMetadata.RequestModel.REQUEST_MODEL_VIRTUAL_HOSTED_STYLE,
@@ -146,8 +146,8 @@ if __name__== '__main__':
                     time_created=storage_transfer_v1.MetadataOptions.TimeCreated.TIME_CREATED_PRESERVE_AS_CUSTOM_TIME
                 )
             ),
-            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
-            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
+            source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1 if switchPool else pool_option2}'
+            # source_agent_pool_name=f'projects/{project_id}/agentPools/{pool_option1}'
             
         )
 
